@@ -72,6 +72,41 @@ Sure Sight Security is a proprietary platform developed by Hovering Horizons L.L
   This repository contains high-level documentation and architecture only.
 Runtime source code is maintained in a private repository.
 
+## High-Level Architecture Diagram
+
+                    ┌──────────────────────────────┐
+                    │      Exterior Environment    │
+                    │  (Visitor / Motion Event)    │
+                    └───────────────┬──────────────┘
+                                    │
+                             Motion Trigger
+                                    │
+                    ┌───────────────▼──────────────┐
+                    │        Motion Module         │
+                    │      (GPIO Sensor Input)     │
+                    └───────────────┬──────────────┘
+                                    │
+                    ┌───────────────▼──────────────┐
+                    │        Camera Module         │
+                    │   (Frame Acquisition Layer)  │
+                    └───────────────┬──────────────┘
+                                    │
+              ┌─────────────────────┴─────────────────────┐
+              │                                           │
+┌─────────────▼─────────────┐              ┌──────────────▼──────────────┐
+│      Recording Engine     │              │        Web Streaming        │
+│   (Clip + SSD Storage)    │              │      (LAN Video Access)     │
+└─────────────┬─────────────┘              └──────────────┬──────────────┘
+              │                                           │
+     ┌────────▼────────┐                        ┌────────▼────────┐
+     │  Secure Storage │                        │  Local Network  │
+     │   (SSD Drive)   │                        │   (Authorized)  │
+     └─────────────────┘                        └─────────────────┘
+
+
+Sure Sight Security operates entirely at the edge, processing motion events,
+capturing video, and serving secure local streams without requiring cloud connectivity.
+
   Roadmap
 Planned enhancements:
 Advanced person detection
