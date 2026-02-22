@@ -103,6 +103,14 @@ Runtime source code is maintained in a private repository.
      │   (SSD Drive)   │                        │   (Authorized)  │
      └─────────────────┘                        └─────────────────┘
 
+                              Future Expansion Layer
+                    ┌────────────────────────────────────┐
+                    │  • Edge-Based AI Detection         │
+                    │  • Secure Facility Mode            │
+                    │  • Accessibility Enhancements      │
+                    │  • Remote Management (Optional)    │
+                    │  • Projection Integration Layer    │
+                    └────────────────────────────────────┘
 
 Sure Sight Security operates entirely at the edge, processing motion events,
 capturing video, and serving secure local streams without requiring cloud connectivity.
